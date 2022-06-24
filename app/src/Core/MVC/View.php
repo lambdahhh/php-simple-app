@@ -11,7 +11,7 @@ class View implements ViewInterface
     {
         $path = sprintf('./../templates/%s', $template);
         if (file_exists($path)) {
-            return include $path;
+            return file_get_contents($path);
         }
         throw new MVCException('Шаблон не найден');
     }
