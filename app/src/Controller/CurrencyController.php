@@ -12,6 +12,13 @@ class CurrencyController extends AbstractController
      */
     public function indexAction(): string
     {
-        return $this->view->render('currency/index.php');
+        $currency = [
+            ['CharCode' => 'EUR', 'Name' => 'Евро', 'Value' => 1.1],
+            ['CharCode' => 'USD', 'Name' => 'Доллар', 'Value' => 1.0],
+        ];
+
+        return $this->view->render('currency/index.php', [
+            'currency' => $currency
+        ]);
     }
 }
